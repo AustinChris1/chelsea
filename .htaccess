@@ -1,0 +1,32 @@
+RewriteEngine On
+
+#Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+#Redirect .php to no extension
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,NE,L]
+
+RewriteRule ^news/(\d+)/(\d+)/(\d+)/([a-zA-Z0-9_-]+) news/index?date=$1/$2/$3&title=$4 [NC]
+RewriteRule ^news/(\d+)/(\d+)/(\d+) news/index?date=$1/$2/$3 [NC,L]
+
+# RewriteRule ^teams/first-team/([a-zA-Z0-9_-]+) teams/first-team/index?profile=$1 [NC]
+
+# RewriteRule ^news/ news/index
+
+
+    # RewriteRule ^search/([a-zA-Z0-9_-]+) search.php?search=$1 [NC,L]
+    # RewriteRule ^teams/first-team/([a-zA-Z0-9_-]+) teams/first-team/?profile=$1 [NC,L]
+
+
+
+
+    #ErrorDocument 404 http://192.168.43.46/portfolio/404
+
+
+
+
+    #Rules for .htaccess
+    #NC makes the rule non case sensitive
+    #L makes this the last rule that this specific condition will match
