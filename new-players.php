@@ -21,7 +21,7 @@ $query = $db->query("SELECT * FROM users WHERE id = '$user_id' LIMIT 1");
 foreach($query as $data):
 ?>
 <div class="memberB">
-    <form action="recruitcode.php" method="post">
+    <form action="recruitcode" method="POST">
         <h1 style="margin: auto;">Player Recruitment Form</h1>
         <div class="field">
             <input type="text" name="fname" value="<?= $data['fname'];?>" readonly required>

@@ -45,7 +45,7 @@ if($query->num_rows>0){
     <div class="member"style="width: 100%; margin-right: 5rem;" >
         <img src="assets/realchelsea.jpeg" alt="chelseafc">
     </div>
-    <h1 style="margin: auto; text-align: center; font-size:35px;">You have to log in to access here</h1>'
+    <h1 style="margin: auto; text-align: center; font-size:35px;">You have to log in to access here</h1>
 <?php 
 }
 include 'includes/footer.php';

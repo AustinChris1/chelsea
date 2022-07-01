@@ -11,12 +11,13 @@ RewriteRule ^ /%1 [R=301,NE,L]
 RewriteRule ^news/(\d+)/(\d+)/(\d+)/([a-zA-Z0-9_-]+) news/index?date=$1/$2/$3&title=$4 [NC]
 RewriteRule ^news/(\d+)/(\d+)/(\d+) news/index?date=$1/$2/$3 [NC,L]
 
-# RewriteRule ^teams/first-team/([a-zA-Z0-9_-]+) teams/first-team/index?profile=$1 [NC]
+RewriteRule ^teams/first-team/([a-zA-Z0-9_-]+)-([a-zA-Z0-9_-]+) teams/first-team/index?profile=$1-$2 [NC,L]
 
 # RewriteRule ^news/ news/index
 
 
-    # RewriteRule ^search/([a-zA-Z0-9_-]+) search.php?search=$1 [NC,L]
+    RewriteRule ^search/([a-zA-Z0-9_-]+) search?search=$1 [R,N]
+    
     # RewriteRule ^teams/first-team/([a-zA-Z0-9_-]+) teams/first-team/?profile=$1 [NC,L]
 
 

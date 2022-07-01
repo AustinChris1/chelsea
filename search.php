@@ -6,9 +6,19 @@ if(isset($_GET['search'])){
     $searchQuery = $_GET['search'];
     $searchQuery = $db->real_escape_string($searchQuery);
 
-    $pquery = $db->query("SELECT * FROM posts WHERE CONCAT(name,sub_description,description) LIKE '%$searchQuery%' ORDER BY id DESC");
-    $playerquery = $db->query("SELECT * FROM players WHERE CONCAT(name,number,sub_description,description) LIKE '%$searchQuery%' ORDER BY id DESC");
-    $uquery = $db->query("SELECT * FROM users WHERE CONCAT(fname,lname) LIKE '%$searchQuery%' ORDER BY id DESC");
+
+
+    if(isset($_GET['search']) && isset($_GET['page'])){
+        $page = $_GET['page'];
+    }else{
+        $page = 1;
+    }
+    $num = 04;
+    $start_from = ($page-1)*04;
+
+    $pquery = $db->query("SELECT * FROM posts WHERE CONCAT(name,sub_description,description) LIKE '%$searchQuery%' ORDER BY id DESC LIMIT $start_from,$num");
+    $playerquery = $db->query("SELECT * FROM players WHERE CONCAT(name,number,sub_description,description) LIKE '%$searchQuery%' ORDER BY id DESC LIMIT $start_from,$num");
+    $uquery = $db->query("SELECT * FROM recruits WHERE CONCAT(fname,lname) LIKE '%$searchQuery%' ORDER BY id DESC LIMIT $start_from,$num");
 
     $urow = $uquery->num_rows;
     $prow = $pquery->num_rows;
@@ -49,13 +59,38 @@ if($uquery->num_rows > 0){
         <?php
         foreach($uquery as $data){
             ?>
-            <section style="margin-top: 2rem; z-index: 10000;"><div>
-                <a href="<?= $data['lname'] ?>"><img src="<?= $data['user_image']?>" alt="<?= $data['fname'] ?>" style="width: 300px; height: 200px;">
-            <?= $data['fname'] ?></div></a></section>
+        <div class="postSearch"> <a href="teams/recruits/<?= $data['url'] ?>"><img src="uploads/recruits/<?= $data['image']?>" alt="<?= $data['name'] ?>" style="width: 300px; height: 200px;">
+        <div class="postP" style="margin-top: 0rem; width: 60px; height: 20px;"><div class="num"><?= $data['position'] ?></div>
+        <?= $data['name'] ?><button class="loginBtn" style="width: 20rem; height: 3.5rem; margin-top: 1rem;">View Profile</button></div></a></div>
             <?php
         }
     }
 
+
+
+    $postquery = $db->query("SELECT * FROM posts");
+    $playersquery = $db->query("SELECT * FROM players");
+    $recruitquery = $db->query("SELECT * FROM recruits");
+
+    $recruitrow = $recruitquery->num_rows;
+    $postrow = $postquery->num_rows;
+    $playersrow = $playersquery->num_rows;
+    $total_num_row = $recruitrow + $postrow + $playersrow;
+    $total_page = ceil($total_num_row/$num);
+    // echo $total_page;
+    if($page > 1){
+        ?>
+      <button onclick="window.location.href='?search=<?=$searchQuery?>&page=<?=($page-1)?>'">Previous</button>
+    <?php }
+    for($i=1;$i<=$total_page;$i++){
+        ?>
+        <button onclick="window.location.href='?search=<?=$searchQuery?>&page=<?=$i?>'"><?= $i ?></button>
+        <?php }
+        if($page < $i){
+            ?>
+            <button onclick="window.location.href='?search=<?=$searchQuery?>&page=<?=($page+1)?>'">Next</button>
+          <?php }
+      
 }
 
 

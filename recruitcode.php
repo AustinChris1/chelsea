@@ -17,6 +17,7 @@ if(isset($_POST['recruit'])){
     $state = $_POST['state'];
     $zip = $_POST['zip'];
     $dob = $_POST['dob'];
+    $url = $fname."-".$lname;
 
     $fname= $db->real_escape_string($fname);
     $lname= $db->real_escape_string($lname);
@@ -33,6 +34,7 @@ if(isset($_POST['recruit'])){
     $zip= $db->real_escape_string($zip);
     $state= $db->real_escape_string($state);
     $dob= $db->real_escape_string($dob);
+    $url= $db->real_escape_string($url);
 
     $image = $_FILES["image"]["name"];
     //rename the image
@@ -51,8 +53,8 @@ if(isset($_POST['recruit'])){
 
     $user_id = $_SESSION['auth_user']['id'];
     
-        $query = $db->query("INSERT INTO recruits (user_id,fname,lname,email,address,raddress,birthplace,phone,height,weight,gender,position,country,zip,state,dob,image,id_image,med_image)
-         VALUES('$user_id','$fname', '$lname', '$email', '$address', '$raddress', '$birthplace', '$phone', '$height', '$weight', '$gender', '$position', '$country', '$zip', '$state', '$dob', '$filename', '$id_filename', '$med_filename')");
+        $query = $db->query("INSERT INTO recruits (user_id,fname,lname,email,address,raddress,birthplace,phone,height,weight,gender,position,country,zip,state,dob,image,id_image,med_image,url)
+         VALUES('$user_id' ,'$fname', '$lname', '$email', '$address', '$raddress', '$birthplace', '$phone', '$height', '$weight', '$gender', '$position', '$country', '$zip', '$state', '$dob', '$filename', '$id_filename', '$med_filename', '$url')");
     
         if($query){
             move_uploaded_file(

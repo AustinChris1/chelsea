@@ -115,7 +115,7 @@ if (isset($_GET["profile"])) {
                     foreach ($player_category as $playeritems) { ?>
 
 <?php if ($playeritems["image"] != null): ?>
-    <div class="player" onclick="window.location.href='?profile=<?=$playeritems['url'];?>'"><div class="num"><?= $playeritems['number'] ?></div>
+    <div class="player" onclick="window.location.href='<?=$playeritems['url'];?>'"><div class="num"><?= $playeritems['number'] ?></div>
 <img src="../../uploads/profile/<?=$playeritems['p_image']?>" alt="">
 <p class="playname"><?= $playeritems['name'] ?></p>
     </div> 
