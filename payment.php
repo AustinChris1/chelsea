@@ -37,13 +37,13 @@ if($query->num_rows>0){
 <?php } ?>
 </section>
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-    <script src="jquery.js"></script>
-    <script src="paypal.js"></script>
+    <script src="/chelsea/jquery.js"></script>
+    <script src="/chelsea/paypal.js"></script>
 
 <?php
 }else{    ?>
     <div class="member"style="width: 100%; margin-right: 5rem;" >
-        <img src="assets/realchelsea.jpeg" alt="chelseafc">
+        <img src="/chelsea/assets/realchelsea.jpeg" alt="chelseafc">
     </div>
     <h1 style="margin: auto; text-align: center; font-size:35px;">You have to log in to access here</h1>
 <?php 

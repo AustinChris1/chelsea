@@ -50,7 +50,7 @@ if (isset($_GET['date']) && isset($_GET['title'])) {
 <h1 style="font-size: 35px; color: blue; "><?= $details['name']; ?></h1>
             <span><?= date("d F Y, h:i A", strtotime($details["created_at"])) ?></span>
            <div class="member" style="width: 100%; margin-right: 5rem;">
-            <img src="<?= base_url('../uploads/posts/'.$details['image']) ?>" alt="<?= $details["name"] ?>">
+            <img src="<?php echo('/chelsea/uploads/posts/'.$details['image']) ?>" alt="<?= $details["name"] ?>">
             </div> 
             <p style="max-width: 80%; margin-right:20%;"><?= $details["description"]; ?></p>
 
@@ -67,7 +67,7 @@ if (isset($_GET['date']) && isset($_GET['title'])) {
       <?php if ($cat_items["image"] != null) : ?>
         <div style="border: 0.15rem solid #39579A;" onclick="window.location.href='<?= $cat_items['url']; ?>'">
           <span class="divN"><?= $cat_items["cname"] ?></span>
-          <img src="<?= base_url('../uploads/posts/'.$cat_items['image']) ?>" alt="<?= $cat_items["name"] ?>">
+          <img src="<?php echo('/chelsea/uploads/posts/'.$cat_items['image']) ?>" alt="<?= $cat_items["name"] ?>">
           <p><?= $cat_items["name"] ?></p>
           <span class="newsdate"><?= date("d F Y", strtotime($cat_items["created_at"])) ?></span>
         </div>
@@ -101,9 +101,9 @@ elseif (isset($_GET["date"])) {
   <?php
     foreach ($posts as $post_items) : ?>
     <?php if ($post_items["image"] != null) : ?>
-      <div onclick="window.location.href='<?= base_url(date('Y/m/j', strtotime($post_items['created_at'])).'/'.$post_items['url']); ?>'">
+      <div onclick="window.location.href='<?php echo(date('Y/m/j', strtotime($post_items['created_at'])).'/'.$post_items['url']); ?>'">
         <span class="divN"><?= $post_items["cname"] ?></span>
-        <img src="<?= base_url('../uploads/posts/'.$post_items['image']) ?>" alt="<?= $post_items["name"] ?>">
+        <img src="<?php echo('/chelsea/uploads/posts/'.$post_items['image']) ?>" alt="<?= $post_items["name"] ?>">
         <p><?= $post_items["name"] ?></p>
         <span class="newsdate"><?= date("d F Y", strtotime($post_items["created_at"])) ?></span>
       </div>
@@ -122,9 +122,9 @@ elseif (isset($_GET["date"])) {
     if ($post_category->num_rows > 0) {
       foreach ($post_category as $postitems) { ?>
       <?php if ($postitems["image"] != null) : ?>
-        <div onclick="window.location.href='<?= base_url(date('Y/m/j', strtotime($postitems['created_at'])).'/'.$postitems['url']); ?>'">
+        <div onclick="window.location.href='<?php echo(date('Y/m/j', strtotime($postitems['created_at'])).'/'.$postitems['url']); ?>'">
           <span class="divN"><?= $postitems["cname"] ?></span>
-          <img src="<?= base_url('../uploads/posts/'.$postitems['image']) ?>"" alt="<?= $postitems["name"] ?>">
+          <img src="<?php echo('/chelsea/uploads/posts/'.$postitems['image']) ?>"" alt="<?= $postitems["name"] ?>">
           <p><?= $postitems["name"] ?></p>
           <span class="newsdate"><?= date("d F Y", strtotime($postitems["created_at"])) ?></span>
         </div>
@@ -169,7 +169,7 @@ else {
       <?php if ($blogitems["image"] != null) : ?>
         <div onclick="window.location.href='<?= date('Y/m/j', strtotime($blogitems['created_at'])); ?>/<?= $blogitems['url']; ?>'">
           <span class="divN"><?= $blogitems["cname"] ?></span>
-          <img src="<?= base_url('../uploads/posts/'.$blogitems['image']) ?>" alt="<?= $blogitems["name"] ?>">
+          <img src="<?php echo('/chelsea/uploads/posts/'.$blogitems['image']) ?>" alt="<?= $blogitems["name"] ?>">
           <p><?= $blogitems["name"] ?></p>
           <span class="newsdate"><?= date("d F Y, h:i A", strtotime($blogitems["created_at"])) ?></span>
         </div>

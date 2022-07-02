@@ -37,6 +37,7 @@ const t6 = document.querySelector('.T6');
 
 const DeskSearch = document.querySelector('.deskSearch');
 const rad1 = document.querySelector('#rad1');
+const srch1 = document.querySelector('#srch1');
 
 
 
@@ -129,7 +130,10 @@ menu.addEventListener("mouseover", () => {
 rad1.addEventListener("mouseout", () => {
   DeskSearch.style.display = "none"
 })
-
+rad1.addEventListener("submit", (e) => {
+  e.preventDefault()
+  window.location.href = `/chelsea/search/${srch1.value}`
+})
 
 
 // where my js code ends 
