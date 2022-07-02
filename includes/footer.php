@@ -2,24 +2,24 @@
 <footer>
   <div class="footdiv1">
 <span class="part part1">
-<img src="assets/Nike_XL_Color@3x.webp" alt="">
-<img src="assets/three_-_footer.webp" alt="">
-<img src="assets/trivago_-_footer_-_trans.webp" alt="">
+<img src="/chelsea/assets/Nike_XL_Color@3x.webp" alt="">
+<img src="/chelsea/assets/three_-_footer.webp" alt="">
+<img src="/chelsea/assets/trivago_-_footer_-_trans.webp" alt="">
 </span>
 
 <span class="part part2">
-<img src="assets/cadbury_-_footer.webp" alt="">
-<img src="assets/ea_-_footer_-_trans.webp" alt="">
-<img src="assets/fiserv_-_footer_-_trans.webp" alt="">
-<img src="assets/go_-_footer_-_trans.webp" alt="">
-<img src="assets/hublot_-_footer_-_trans.webp" alt="">
-<img src="assets/parimatch_-_footer.webp" alt="">
-<img src="assets/singha_-_footer.webp" alt="">
+<img src="/chelsea/assets/cadbury_-_footer.webp" alt="">
+<img src="/chelsea/assets/ea_-_footer_-_trans.webp" alt="">
+<img src="/chelsea/assets/fiserv_-_footer_-_trans.webp" alt="">
+<img src="/chelsea/assets/go_-_footer_-_trans.webp" alt="">
+<img src="/chelsea/assets/hublot_-_footer_-_trans.webp" alt="">
+<img src="/chelsea/assets/parimatch_-_footer.webp" alt="">
+<img src="/chelsea/assets/singha_-_footer.webp" alt="">
 </span>
 
 <span class="part part3">
-<img src="assets/vitality_-_footer.webp" alt="">
-<img src="assets/yokohama-footer.webp" alt="">
+<img src="/chelsea/assets/vitality_-_footer.webp" alt="">
+<img src="/chelsea/assets/yokohama-footer.webp" alt="">
 </span>
   </div>
 
@@ -32,13 +32,13 @@
 </span>
 
 <span class="footlinks">
-  <a href="contact">contact us</a>
-  <a href="faqs">FAQs</a>
-  <a href="careers">careers</a>
-  <a href="SlaveAct">modern slavery act</a>
-  <a href="privacypolicy">privacy policy</a>
-  <a href="cookies">cookies policy</a>
-  <a href="terms and conditions">terms and conditions</a>
+  <a href="/chelsea/contact">contact us</a>
+  <a href="/chelsea/faqs">FAQs</a>
+  <a href="/chelsea/careers">careers</a>
+  <a href="/chelsea/SlaveAct">modern slavery act</a>
+  <a href="/chelsea/privacypolicy">privacy policy</a>
+  <a href="/chelsea/cookies">cookies policy</a>
+  <a href="/chelsea/terms and conditions">terms and conditions</a>
 </span>
 
 <span class="cright">
@@ -47,7 +47,7 @@
 
 <span>
   <span class="britFlag">
-    <img src="assets/en.webp" alt=""> EN <i class="fa fa-angle-down"></i>
+    <img src="/chelsea/assets/en.webp" alt=""> EN <i class="fa fa-angle-down"></i>
   </span>
 </span>
   </div>
@@ -56,6 +56,6 @@
 
 
 
-<script src="index.js"></script>
+<script src="/chelsea/index.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
 
       <i class="fa fa-times" id="close"></i>
       <header> 
-        <img src="5thstand.webp" alt=""> <br>
+        <img src="/chelsea/5thstand.webp" alt=""> <br>
         <b>Log In</b>
       </header>
  <p>Don't have an account yet?<button class="navB" id="join" type="submit">Join us</button></p> <br>
@@ -40,7 +40,7 @@
 
       <i class="fa fa-times" id="remove"></i>
       <header> 
-        <img src="5thstand.webp" alt=""> <br>
+        <img src="/chelsea/5thstand.webp" alt=""> <br>
         <b>Create An Account</b>
               </header>
 <p>Already with us?<button class="navB" type="submit">Log In</button></p>
@@ -114,7 +114,7 @@
 
       <i class="fa fa-times" id="menuclose"></i>
       <header> 
-        <img src="5thstand.webp" alt="">
+        <img src="/chelsea/5thstand.webp" alt="">
       </header>
 
       <form>
@@ -143,7 +143,7 @@
     <section id="firstSection">
       <div class="blue">
 
-        <img src="5thstand.webp" alt="">
+        <img src="/chelsea/5thstand.webp" alt="">
 
         <a href="" class="shift">about chelsea</a>
         <a href="" class="stamford">stamford bridge</a>
@@ -291,14 +291,14 @@
           </div>
 
           <div class="deskSearch">
-            <form id="rad1" action="search" method="GET">
+            <form id="rad1" action="/chelsea/search" method="GET">
               <input type="search" name="search" id="srch1" value="<?php if(isset($_GET['search'])){ echo $_GET['search']; }?>" placeholder="Search">
             </form>
             <div id="searchresult" ></div>
           </div>
       
             </div>
-        <script src="jquery.js"></script>
+        <script src="/chelsea/jquery.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
   $("#srch1").keyup(function(){
